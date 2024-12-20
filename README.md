@@ -4,9 +4,13 @@ DOCUMENTO DI PROGETTAZIONE DEL GIOCO 'BATTAGLIA NAVALE'
 ________________________________________
 2. Obiettivi del progetto
 •	Implementare un sistema di gioco della Battaglia Navale con Java.
+
 •	Realizzare un'interfaccia grafica interattiva utilizzando Processing.
+
 •	Consentire la gestione delle modalità di gioco Giocatore vs Giocatore e Giocatore vs Computer (se possibile implementarla).
+
 •	Implementare un sistema di accesso e registrazione dei giocatori.
+
 •	Fornire feedback visivo per i colpi (colpito, mancato, affondato).
 ________________________________________
 3. Requisiti funzionali

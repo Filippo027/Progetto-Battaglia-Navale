@@ -22,5 +22,7 @@ class Nave{
         this.affondata = false;
         this.x = x;
         this.y = y;
+
+        
     }
 }

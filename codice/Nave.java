@@ -1,3 +1,4 @@
+
 class Nave{
     //Attributi:
 
@@ -5,14 +6,65 @@ class Nave{
     protected String nome;
     //Lunghezza della nave
     protected int lunghezza;
-    //Stato dei segmenti della nave
+    //Stato dei segmenti della nave, se è stata colpita o meno
     protected boolean[] stato;
-    //Indica se la nave è affondata
+    //Indica se la nave è stata affondata
     protected boolean affondata;
-    //Indica la posizione della nave
-    protected int[][] posizione;
-    
+    //Indica le coordinate della nave
+    protected int x;
+    protected int y;
+    //Indica l'orientamento della nave
+    protected PuntiCardinali orientamento;
 
-    
+
+    //Costruttore:
+    public Nave(String nome, int lunghezza, int x, int y, PuntiCardinali orientamento){
+        this.nome = nome;
+        this.lunghezza = lunghezza;
+        this.stato = new boolean[lunghezza];
+        this.affondata = false;
+        this.x = x;
+        this.y = y;
+        this.orientamento = orientamento;
+    }
+
+    //Getter:
+    protected String getNome(){
+        return this.nome;
+    }
+
+    protected int getLunghezza(){
+        return this.lunghezza;
+    }
+
+    protected boolean[] getStato(){
+        return this.stato;
+    }
+
+    protected int getX(){
+        return this.x;
+    }
+
+    protected int getY(){
+        return this.y;
+    }
+
+    protected PuntiCardinali getOrientamento(){
+        return this.orientamento;
+    }
+
+    //Metodi:
+    public void colpita(int posizione){
+        this.stato[posizione] = true;
+    }
+
+    public boolean eAffondata(){
+        for(int i = 0; i < lunghezza; i++){
+            if(stato[i] == falso){
+                return false;
+            }
+        }
+        return true;
+    }
 
 }

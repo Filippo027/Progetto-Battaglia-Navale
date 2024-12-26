@@ -66,4 +66,14 @@ class Nave{
     public void colpita(int posizione){
         this.stato[posizione] = true;
     }
+
+    public boolean eAffondata(){
+        for(int i = 0; i < lunghezza; i++){
+            if(stato[i] == falso){
+                return false;
+            }
+        }
+        return true;
+    }
+    
 }

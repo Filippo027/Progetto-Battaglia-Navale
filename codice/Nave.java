@@ -57,5 +57,15 @@ class Nave{
         return this.orientamento;
     }
 
+    //Setter:
+    public void setNaveAffondata(){
+        this.affondata = true;
+    }
+
+    //Metodi:
+    
+
+
+
 
 }

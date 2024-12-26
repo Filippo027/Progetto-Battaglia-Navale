@@ -1,3 +1,5 @@
+import PuntiCardinali;
+
 class Nave{
     //Attributi:
 

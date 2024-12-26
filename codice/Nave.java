@@ -63,9 +63,7 @@ class Nave{
     }
 
     //Metodi:
-    
-
-
-
-
+    public void colpita(int posizione){
+        this.stato[posizione] = true;
+    }
 }

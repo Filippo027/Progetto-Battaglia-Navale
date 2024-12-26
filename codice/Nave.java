@@ -26,7 +26,36 @@ class Nave{
         this.x = x;
         this.y = y;
         this.orientamento = orientamento;
-
-        
     }
+
+    //Getter:
+    protected String getNome(){
+        return this.nome;
+    }
+
+    protected int getLunghezza(){
+        return this.lunghezza;
+    }
+
+    protected boolean[] getStato(){
+        return this.stato;
+    }
+
+    protected boolean getAffondata(){
+        return this.affondata;
+    }
+
+    protected int getX(){
+        return this.x;
+    }
+
+    protected int getY(){
+        return this.y;
+    }
+
+    protected PuntiCardinali getOrientamento(){
+        return this.orientamento;
+    }
+
+
 }

@@ -41,10 +41,6 @@ class Nave{
         return this.stato;
     }
 
-    protected boolean getAffondata(){
-        return this.affondata;
-    }
-
     protected int getX(){
         return this.x;
     }
@@ -55,11 +51,6 @@ class Nave{
 
     protected PuntiCardinali getOrientamento(){
         return this.orientamento;
-    }
-
-    //Setter:
-    public void setNaveAffondata(){
-        this.affondata = true;
     }
 
     //Metodi:
@@ -75,5 +66,5 @@ class Nave{
         }
         return true;
     }
-    
+
 }

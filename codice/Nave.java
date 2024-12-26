@@ -12,16 +12,19 @@ class Nave{
     //Indica le coordinate della nave
     protected int x;
     protected int y;
+    //Indica l'orientamento della nave
+    protected PuntiCardinali orientamento;
 
 
     //Costruttore:
-    public Nave(String nome, int lunghezza, int x, int y){
+    public Nave(String nome, int lunghezza, int x, int y, PuntiCardinali orientamento){
         this.nome = nome;
         this.lunghezza = lunghezza;
         this.stato = new boolean[lunghezza];
         this.affondata = false;
         this.x = x;
         this.y = y;
+        this.orientamento = orientamento;
 
         
     }

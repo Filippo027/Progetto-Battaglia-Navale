@@ -10,7 +10,7 @@ class Giocatore{
     //Costruttore
     public Giocatore(String nome, Griglia griglia){
         this.nome = nome;
-        this.griglia = griglia;
+        this.griglia = new Griglia();
         this.navi = new ArrayList<Nave>();
     }
     

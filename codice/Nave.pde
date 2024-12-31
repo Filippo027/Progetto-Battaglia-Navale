@@ -54,7 +54,7 @@ class Nave{
     }
 
     //Metodi:
-    public boolean colpita(int colpoX, int colpoY){
+    public boolean colpita(Nave nave, int colpoX, int colpoY){
         if(nave.getX() == colpoX && nave.getY() == colpoY){
             return true;
         } else {
@@ -65,7 +65,7 @@ class Nave{
 
     public boolean eAffondata(){
         for(int i = 0; i < lunghezza; i++){
-            if(stato[i] == falso){
+            if(stato[i] == false){
                 return false;
             }
         }

@@ -53,6 +53,8 @@ class Nave{
         return this.orientamento;
     }
 
+    //Metodi:
+
     protected void setStato(int colpoX, int colpoY){
         if(colpita(colpoX, colpoY)){
 
@@ -85,7 +87,6 @@ class Nave{
         }
     }
 
-    //Metodi:
     public boolean colpita(int colpoX, int colpoY){
 
         if(orientamento == PuntiCardinali.NORD || orientamento == PuntiCardinali.SUD){
@@ -105,8 +106,9 @@ class Nave{
 
 
     public boolean eAffondata(){
-        for(int i = 0; i < lunghezza; i++){
-            if(stato[i] == false){
+        //Cicla l'array stato e se anche solo un segmento non è stato colpito la nave non è affondata
+        for(boolean segmento : stato){
+            if(!segmento){
                 return false;
             }
         }

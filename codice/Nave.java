@@ -62,7 +62,7 @@ class Nave{
         }
     }
 
-    
+
     public boolean eAffondata(){
         for(int i = 0; i < lunghezza; i++){
             if(stato[i] == falso){

@@ -86,12 +86,21 @@ class Nave{
     }
 
     //Metodi:
-    public boolean colpita(Nave nave, int colpoX, int colpoY){
-        if(nave.getX() == colpoX && nave.getY() == colpoY){
-            return true;
-        } else {
-            return false;
+    public boolean colpita(int colpoX, int colpoY){
+
+        if(orientamento == PuntiCardinali.NORD || orientamento == PuntiCardinali.SUD){
+            return colpoX == x && colpoY >= y && colpoY > y + lunghezza;
+            /*
+            Se la nave è orizzontale controlla se la x è la stessa e se la coordinata y
+            del colpo sia contenuta nella lunghezza della nave
+            */
+        } else if(orientamento == PuntiCardinali.EST || orientamento == PuntiCardinali.OVEST){
+            return colpoY == y && colpoX >= x && colpoX > x + lunghezza;
+            //Se la nave è verticale esegue il controllo opposto
         }
+
+        //Il colpo non ha colpito la nave
+        return false;
     }
 
 

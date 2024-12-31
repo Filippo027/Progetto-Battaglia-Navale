@@ -14,4 +14,5 @@ class Giocatore{
         this.navi = new ArrayList<Nave>();
     }
     
+    
 }

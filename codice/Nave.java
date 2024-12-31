@@ -53,6 +53,38 @@ class Nave{
         return this.orientamento;
     }
 
+    protected void setStato(int colpoX, int colpoY){
+        if(colpita(colpoX, colpoY)){
+
+            int indiceCoolpo = 0;
+
+            switch(orientamento){
+                case NORD:
+                    indiceCoolpo = y - colpoY;
+                break;
+
+                case EST:
+                    indiceCoolpo = colpoX - x;
+                break;
+
+                case SUD:
+                    indiceCoolpo = colpoY - y;
+                break;
+
+                case OVEST:
+                    indiceCoolpo = x - colpoX;
+                break;
+
+                default:
+                break;
+            }
+
+            if(indiceCoolpo >= 0 && indiceCoolpo < lunghezza){
+                stato[indiceCoolpo] = true;
+            }
+        }
+    }
+
     //Metodi:
     public boolean colpita(Nave nave, int colpoX, int colpoY){
         if(nave.getX() == colpoX && nave.getY() == colpoY){

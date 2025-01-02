@@ -15,23 +15,24 @@ class Giocatore{
         this.navi = new ArrayList<Nave>();
     }
 
-    protected void aggiungiNave(String nome, int lunghezza, int x, int y, PuntiCardinali orientamento){
-        Nave nuovaNave = new Nave(nome, lunghezza, x, y, orientamento);
-        this.navi.add(nuovaNave);
+    protected void aggiungiNave(Nave nave){
+        this.navi.add(nave);
     }
 
     public List<Nave> getNavi() {
         return navi;
     }
 
-    protected void spara(Giocatore avvesrasio, int colpoX, int colpoY){
+    protected boolean spara(Giocatore avvesrasio, int colpoX, int colpoY){
         //Cicla le navi dell'avversario e controlla se una delle navi è stata colpita
         for(Nave nave : avversario.getNavi()){
-            
+
             if(nave.colpita(colpoX, colpoY)){
                 nave.setStato(colpoX, colpoY){
+                return true;
                 }
             }
         }
+        return false;
     }
 }

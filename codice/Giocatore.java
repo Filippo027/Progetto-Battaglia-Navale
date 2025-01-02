@@ -19,7 +19,7 @@ class Giocatore{
         this.navi.add(nave);
     }
 
-    public List<Nave> getNavi() {
+    public ArrayList<Nave> getNavi() {
         return navi;
     }
 

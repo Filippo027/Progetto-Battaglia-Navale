@@ -19,6 +19,19 @@ class Giocatore{
         Nave nuovaNave = new Nave(nome, lunghezza, x, y, orientamento);
         this.navi.add(nuovaNave);
     }
-    
-    
+
+    public List<Nave> getNavi() {
+        return navi;
+    }
+
+    protected void spara(Giocatore avvesrasio, int colpoX, int colpoY){
+        //Cicla le navi dell'avversario e controlla se una delle navi è stata colpita
+        for(Nave nave : avversario.getNavi()){
+            
+            if(nave.colpita(colpoX, colpoY)){
+                nave.setStato(colpoX, colpoY){
+                }
+            }
+        }
+    }
 }

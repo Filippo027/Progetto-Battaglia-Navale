@@ -4,10 +4,12 @@ public class Griglia {
     private int colonne=7;
     private int margine=5;
     protected Cella [][] griglia;
+
     //costeruttore
     public Griglia(){
         griglia=new Cella[righe][colonne];
     }
+
     //inizializzazione della matrice 
     void inizializzaGriglia(){
         for(int i=0; i<righe; i++){
@@ -16,6 +18,7 @@ public class Griglia {
             }
         }
     }
+    
     void displayGriglia(){
         int posX=margine;
         int posY=margine;

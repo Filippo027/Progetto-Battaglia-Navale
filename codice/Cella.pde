@@ -6,8 +6,8 @@ public class Cella {
     int b = 0;
 
     public Cella(){
-        assegnato=false;
-        colpito=false; 
+        assegnato = false;
+        colpito = false; 
     }
 
     private void coloreCella(){

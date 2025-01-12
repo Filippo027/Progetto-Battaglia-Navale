@@ -263,6 +263,8 @@ public class Griglia {
 
             System.out.print("Inserisci la coordinata della seconda colonna:");
             colonnaFine=Leggi.unInt();
+            
+            printGriglia();
 
         } while (!checkCoordinateCorrette(rigaInizio,colonnaInizio,rigaFine,colonnaFine,naveDaAssegnare));
     }

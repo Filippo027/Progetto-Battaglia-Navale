@@ -8,7 +8,6 @@ public class Utente {
     public Utente(GestoreAccesso gestoreAccesso){
         this.gestoreAccesso = gestoreAccesso;
         chiediNomeGiocatore();
-        inizializzazione();
     }
 
     private void chiediNomeGiocatore(){
@@ -23,10 +22,6 @@ public class Utente {
             System.out.println("Giocatore non trovato! Procedo con la registrazione...");
             gestoreAccesso.registraGiocatoreInterattivo(nome, password);
         }
-    }
-
-    public void inizializzazione(){
-        grigliaGiocatore.inserisciNavi();
     }
 
     private void attacco(){
@@ -45,6 +40,7 @@ public class Utente {
 
     public void azioniGiocatore(){
         grigliaGiocatore.printGriglia();
+        grigliaGiocatore.inserisciNavi();
         attacco();
     }
 

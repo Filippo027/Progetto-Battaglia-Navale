@@ -264,7 +264,7 @@ public class Griglia {
             System.out.print("Inserisci la coordinata della seconda colonna:");
             colonnaFine=Leggi.unInt();
             
-            checkAssegnamento(rigaInizio, colonnaInizio, rigaFine, colonnaFine, naveDaAssegnare);
+            //checkAssegnamento(rigaInizio, colonnaInizio, rigaFine, colonnaFine, naveDaAssegnare);
             printGriglia();
             //aaaaaaaaaaaaaaaaaaaa
 

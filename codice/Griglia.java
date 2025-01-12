@@ -265,6 +265,8 @@ public class Griglia {
             colonnaFine=Leggi.unInt();
             
             printGriglia();
+            inserisciNavi();
+            //aaaaaaaaaaaaaaaaaaaa
 
         } while (!checkCoordinateCorrette(rigaInizio,colonnaInizio,rigaFine,colonnaFine,naveDaAssegnare));
     }

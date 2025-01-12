@@ -264,8 +264,8 @@ public class Griglia {
             System.out.print("Inserisci la coordinata della seconda colonna:");
             colonnaFine=Leggi.unInt();
             
+            checkAssegnamento(rigaInizio, colonnaInizio, rigaFine, colonnaFine, naveDaAssegnare);
             printGriglia();
-            inserisciNavi();
             //aaaaaaaaaaaaaaaaaaaa
 
         } while (!checkCoordinateCorrette(rigaInizio,colonnaInizio,rigaFine,colonnaFine,naveDaAssegnare));

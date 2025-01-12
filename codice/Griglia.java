@@ -22,10 +22,13 @@ public class Griglia {
             for(int j=0; j<colonne; j++){
                 if(i==0 && j!=0){
                     griglia[i][j].printCellaIndice(j);
+
                 }else if(j==0 && i!=0){
                     griglia[i][j].printCellaIndice(i);
+
                 }else if(j==0 && i==0){
                     griglia[i][j].printCellaIndice(-44);
+
                 }else{
                     griglia[i][j].printCella();
                 }
@@ -37,23 +40,27 @@ public class Griglia {
     private boolean checkNumeriCorretti(int rigaInizio,int colonnaInizio){
         if((rigaInizio>0 && rigaInizio<10) && (colonnaInizio>0 && colonnaInizio<7)){
             return true;
+
         }else{
-            System.out.println("hai inserito dei numeri che non stanno nel campo da gioco, reinserisci");
+            System.out.println("Hai inserito dei numeri che non stanno nel campo da gioco, reinserisci");
             return false;
         }
     }    
     public boolean setCellaColpita(int rigaInizio,int colonnaInizio){
         if(!checkNumeriCorretti(rigaInizio, colonnaInizio)){
-            System.out.println("coordinate non valide, reinseriscile");
+            System.out.println("Coordinate non valide, reinseriscile");
             return false;
         }
+
         if(!griglia[rigaInizio][colonnaInizio].getColpito()){
             griglia[rigaInizio][colonnaInizio].setColpito();
-            System.out.println("hai colpito una parte della nave!");
+            System.out.println("Hai colpito una parte della nave!");
+
         }else{
-            System.out.println("cella già colpita precedentemente, reinserisci le coordinate");
+            System.out.println("Cella già colpita precedentemente, reinserisci le coordinate");
             return false;
         }
+
         cambiaStatoCella(rigaInizio, colonnaInizio);
         return true;
     }
@@ -62,17 +69,21 @@ public class Griglia {
             numeroCelleNavi--;
         }
     }
+
     //fine delle righe per il sistema di attaco di una cella 
     private int sceltaNave(){
         if(numeroCelleNaviAssegnabili==16){
             numeroCelleNaviAssegnabili=numeroCelleNaviAssegnabili-5;
             return 5;
+
         }else if(numeroCelleNaviAssegnabili==11 || numeroCelleNaviAssegnabili == 8){
             numeroCelleNaviAssegnabili=numeroCelleNaviAssegnabili-3;
             return 3;
+
         }else if(numeroCelleNaviAssegnabili==5 || numeroCelleNaviAssegnabili==3){
             numeroCelleNaviAssegnabili=numeroCelleNaviAssegnabili-2;
             return 2;
+
         }else if(numeroCelleNaviAssegnabili==1){
             numeroCelleNaviAssegnabili--;
             return 1;
@@ -91,39 +102,47 @@ public class Griglia {
     //controlli per l'inserimento quindi la configurazione della nave
     private boolean checkPosizione(int rigaInizio, int colonnaInizio, int rigaFine, int colonnaFine, int naveDaAssegnare){
         if((rigaInizio != rigaFine) && (colonnaInizio != colonnaFine) ){
-            System.out.println("le due coordinate non hanno ne la stessa riga, ne la stessa colonna, reinserisci");
+            System.out.println("Le due coordinate non hanno ne la stessa riga, ne la stessa colonna, reinserisci");
             return false;
+
         }
         if(naveDaAssegnare!=1){
             if((rigaInizio == rigaFine) && (colonnaInizio == colonnaFine)){
-                System.out.println("hai inserito due coordinate uguali, reinserisci");
+                System.out.println("Hai inserito due coordinate uguali, reinserisci");
                 return false;
+
             }
         }else if(naveDaAssegnare==1){
             if((rigaInizio == rigaFine) && (colonnaInizio == colonnaFine)){
                 return true;
+
             }
         }
         if((rigaInizio==rigaFine) && (colonnaInizio!=colonnaFine)){
             return true;
+
         }
         if((rigaInizio!=rigaFine) && (colonnaInizio==colonnaFine)){
             return true;
         }
         return false;
     }
+
     private boolean checkDistanza(int rigaInizio,int colonnaInizio,int rigaFine,int colonnaFine, int naveDaAssegnare){
         int distanza=0;
         if(naveDaAssegnare!=1){
             if(rigaInizio==rigaFine){
                 if(colonnaInizio<colonnaFine){
                     distanza=colonnaFine-colonnaInizio+1;
+
                 }else{
                     distanza=colonnaInizio-colonnaFine+1;
                 }
+
             }else if(colonnaInizio==colonnaFine){
                 if(rigaInizio<rigaFine){
                     distanza=rigaFine-rigaInizio+1;
+
                 }else{
                     distanza=rigaInizio-rigaFine+1;
                 }
@@ -136,19 +155,22 @@ public class Griglia {
        
         if(distanza==naveDaAssegnare){
             return true;
+
         }else{
-            System.out.println("le coordinate inserite non hanno la giusta distanza, quest'ultima dev'essere uguale a "+naveDaAssegnare);
+            System.out.println("Le coordinate inserite non hanno la giusta distanza, quest'ultima dev'essere uguale a "+naveDaAssegnare);
             return false;
         }
     }
+
     private boolean checkAssegnamento(int rigaInizio,int colonnaInizio,int rigaFine,int colonnaFine, int naveDaAssegnare){
         if(naveDaAssegnare!=1){
             if(rigaInizio == rigaFine){
                 if(colonnaInizio<colonnaFine){
                     for(int j=colonnaInizio; j<=colonnaFine; j++){
                         if(griglia[rigaInizio][j].getAssegnato()){
-                            System.out.println("una delle celle da assegnare alla nave è gia assegnata, reinserisci");
+                            System.out.println("Una delle celle da assegnare alla nave è gia assegnata, reinserisci");
                             return false;
+
                         }else{
                             griglia[rigaInizio][j].setAssegnato();
                         }
@@ -156,7 +178,7 @@ public class Griglia {
                 }else{
                     for(int j=colonnaFine; j<=colonnaInizio; j++){
                         if(griglia[rigaInizio][j].getAssegnato()){
-                            System.out.println("una delle celle da assegnare alla nave è gia assegnata, reinserisci");
+                            System.out.println("Una delle celle da assegnare alla nave è gia assegnata, reinserisci");
                             return false;
                         }else{
                             griglia[rigaInizio][j].setAssegnato();
@@ -164,22 +186,25 @@ public class Griglia {
                     }
                 }
             }
+
             if(colonnaInizio == colonnaFine){
                 if(rigaInizio<rigaFine){
                     for(int j=rigaInizio; j<=rigaFine; j++){
                         if(griglia[rigaInizio][j].getAssegnato()){
-                            System.out.println("una delle celle da assegnare alla nave è gia assegnata");
+                            System.out.println("Una delle celle da assegnare alla nave è gia assegnata");
                             
                             return false;
                         }else{
                             griglia[colonnaInizio][j].setAssegnato();
                         }
                     }
+
                 }else{
                     for(int j=rigaFine; j<=rigaInizio; j++){
                         if(griglia[colonnaInizio][j].getAssegnato()){
-                            System.out.println("una delle celle da assegnare alla nave è gia assegnata");
+                            System.out.println("Una delle celle da assegnare alla nave è gia assegnata");
                             return false;
+
                         }else{
                             griglia[colonnaInizio][j].setAssegnato();
                         }
@@ -189,6 +214,7 @@ public class Griglia {
         }else{
             if(!griglia[rigaInizio][colonnaInizio].getAssegnato()){
                 griglia[rigaInizio][colonnaInizio].setAssegnato();
+
             }else{
                 return false;
             }
@@ -201,12 +227,15 @@ public class Griglia {
         if(!(checkNumeriCorretti(rigaInizio,colonnaInizio) && checkNumeriCorretti(rigaFine,colonnaFine))){
             return false;
         }
+
         if(!checkPosizione(rigaInizio,colonnaInizio,rigaFine,colonnaFine,naveDaAssegnare)){
             return false;
         }
+
         if(!checkDistanza(rigaInizio,colonnaInizio,rigaFine,colonnaFine,naveDaAssegnare)){
             return false;
         }
+
         if(!checkAssegnamento(rigaInizio, colonnaInizio, rigaFine, colonnaFine, naveDaAssegnare)){
             return false;
         }
@@ -219,17 +248,22 @@ public class Griglia {
         int colonnaInizio=0;
         int rigaFine=0;
         int colonnaFine=0;
+
         do {
-            System.out.println("inserisci la prima coordinata x e y per l'inizio della nave, dimensione: "+naveDaAssegnare);
-            System.out.println("ricorda, per il corretto asssegnamento o la colonna o la riga devono essere uguali, perchè la nave non può essere assegnata in diagonale");
-            System.out.println("inserisci la coordinata della prima riga");
+            System.out.println("Inserisci la prima coordinata x e y per l'inizio della nave, dimensione: "+naveDaAssegnare);
+            System.out.println("Ricorda, per il corretto asssegnamento o la colonna o la riga devono essere uguali, perchè la nave non può essere assegnata in diagonale");
+            System.out.print("Inserisci la coordinata della prima riga:");
             rigaInizio=Leggi.unInt();
-            System.out.println("inserisci la coordinata della prima colonna");
+
+            System.out.println("Inserisci la coordinata della prima colonna:");
             colonnaInizio=Leggi.unInt();
-            System.out.println("inserisci la coordinata della seconda riga");
+
+            System.out.println("Inserisci la coordinata della seconda riga:");
             rigaFine=Leggi.unInt();
-            System.out.println("inserisci la coordinata della seconda colonna");
+
+            System.out.println("Inserisci la coordinata della seconda colonna:");
             colonnaFine=Leggi.unInt();
+
         } while (!checkCoordinateCorrette(rigaInizio,colonnaInizio,rigaFine,colonnaFine,naveDaAssegnare));
     }
     

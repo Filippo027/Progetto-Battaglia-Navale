@@ -17,4 +17,9 @@ public class GameManager {
             System.out.println("ha vinto il giocatore 1 ");
         }
     }
+
+    public static void main(String[] args){
+        GameManager gameManager = new GameManager();
+        gameManager.gestioneGioco();
+    }
 }

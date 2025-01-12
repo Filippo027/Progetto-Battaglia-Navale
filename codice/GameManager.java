@@ -24,11 +24,11 @@ public class GameManager {
 
             switch (scelta) {
                 case 1:
-                    gestoreAccesso.registraGiocatoreInterattivo();
+                    registraNuovoUtente();
                     break;
 
                 case 2:
-                    gestisciPartita();
+                    gestioneGioco();
                     break;
 
                 case 3:
@@ -46,7 +46,18 @@ public class GameManager {
         }
     }
 
-    public void gestionePartita(){
+    public void registraNuovoUtente() {
+
+        System.out.print("Inserisci il nome del giocatore: ");
+        String nome = Leggi.unoString();
+        
+        System.out.print("Inserisci la password: ");
+        String password = Leggi.unoString();
+
+        gestoreAccesso.registraGiocatoreInterattivo(nome, password);
+    }
+
+    public void gestioneGioco(){
         System.out.println("Benvenuti al gioco di Battaglia Navale!");
         System.out.println("Giocatore 1: " + giocatore1.getNome());
         System.out.println("Giocatore 2: " + giocatore2.getNome());

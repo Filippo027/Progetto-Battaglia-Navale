@@ -1,6 +1,7 @@
 public class Utente {
     Griglia grigliaGiocatore = new Griglia();
     String nome;
+    String password;
     GestoreAccesso gestoreAccesso;
 
 
@@ -14,10 +15,13 @@ public class Utente {
         System.out.print("Inserisci il nome del giocatore: ");
         this.nome = Leggi.unoString();
 
+        System.out.print("Inserisci la password per il giocatore: ");
+        this.password = Leggi.unoString();
+
         //Verifica se il giocatore esiste già nel sistema
-        if (!gestoreAccesso.accediGiocatore(nome)) {
-            System.out.println("Giocatore non registrato! Procedo con la registrazione...");
-            gestoreAccesso.registraGiocatoreInterattivo(nome);
+        if (!gestoreAccesso.accediGiocatore(nome, password)) {
+            System.out.println("Giocatore non trovato! Procedo con la registrazione...");
+            gestoreAccesso.registraGiocatoreInterattivo(nome, password);
         }
     }
 

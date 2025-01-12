@@ -15,30 +15,6 @@ public class GestoreAccesso {
         caricaVittorie(); // Carica le vittorie
     }
 
-    // Metodo per registrare un giocatore (interattivamente)
-    public void registraGiocatoreInterattivo() {
-        try (Scanner scanner = new Scanner(System.in)) {
-            System.out.print("Inserisci il nome del giocatore: ");
-            String nome = scanner.nextLine();
-            
-            // Controlla se il giocatore esiste già
-            if (utenti.containsKey(nome)) {
-                System.out.println("Giocatore già registrato!");
-                return;
-            }
-            
-            System.out.print("Inserisci la password: ");
-            String password = scanner.nextLine();
-            
-            // Salva nome utente e password
-            utenti.put(nome, password);
-            vittorie.put(nome, 0); // Inizializza le vittorie a 0
-            
-            salvaUtenti(); // Aggiorna il file con i nuovi dati
-            System.out.println("Giocatore " + nome + " registrato con successo!");
-        }
-    }
-
     // Metodo per verificare l'accesso di un utente
     public boolean accediGiocatore(String nome, String password) {
         if (utenti.containsKey(nome) && utenti.get(nome).equals(password)) {
@@ -49,6 +25,23 @@ public class GestoreAccesso {
             return false;
         }
     }
+
+    // Metodo per registrare un giocatore (interattivamente)
+    public void registraGiocatoreInterattivo(String nome, String password) {
+        try (Scanner scanner = new Scanner(System.in)) {
+
+            // Salva nome utente e password
+            utenti.put(nome, password);
+            //Inizializza le vittorie a 0
+            vittorie.put(nome, 0);
+            
+            //Aggiorna i file con i nuovi dati
+            salvaUtenti();
+            System.out.println("Giocatore " + nome + " registrato con successo!");
+        }
+    }
+
+    
 
     // Metodo per salvare una vittoria
     public void salvaVittoria(String nome) {

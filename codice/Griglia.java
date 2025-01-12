@@ -258,10 +258,10 @@ public class Griglia {
             System.out.println("Inserisci la coordinata della prima colonna:");
             colonnaInizio=Leggi.unInt();
 
-            System.out.println("Inserisci la coordinata della seconda riga:");
+            System.out.print("Inserisci la coordinata della seconda riga:");
             rigaFine=Leggi.unInt();
 
-            System.out.println("Inserisci la coordinata della seconda colonna:");
+            System.out.print("Inserisci la coordinata della seconda colonna:");
             colonnaFine=Leggi.unInt();
 
         } while (!checkCoordinateCorrette(rigaInizio,colonnaInizio,rigaFine,colonnaFine,naveDaAssegnare));

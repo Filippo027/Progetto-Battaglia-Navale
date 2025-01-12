@@ -255,7 +255,7 @@ public class Griglia {
             System.out.print("Inserisci la coordinata della prima riga:");
             rigaInizio=Leggi.unInt();
 
-            System.out.println("Inserisci la coordinata della prima colonna:");
+            System.out.print("Inserisci la coordinata della prima colonna:");
             colonnaInizio=Leggi.unInt();
 
             System.out.print("Inserisci la coordinata della seconda riga:");

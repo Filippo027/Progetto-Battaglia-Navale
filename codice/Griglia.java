@@ -241,14 +241,4 @@ public class Griglia {
             return false;
         }
     }
-    
-
-
-    public static void main(String[] args) {
-        Griglia griglia=new Griglia();
-        griglia.inserisciNavi();
-        griglia.setCellaColpita(3, 5);
-        griglia.printGriglia();
-        
-    }
 }

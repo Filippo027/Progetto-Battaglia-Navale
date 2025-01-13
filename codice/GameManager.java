@@ -47,8 +47,10 @@ public class GameManager {
         System.out.println("\n--- Aggiungi Nuovo Utente ---");
         System.out.print("Inserisci il nome del nuovo utente: ");
         String nome = Leggi.unoString();
+
         System.out.print("Inserisci la password: ");
         String password = Leggi.unoString();
+
         gestoreAccesso.registraGiocatoreInterattivo(nome, password);
     }
 
@@ -56,6 +58,7 @@ public class GameManager {
         System.out.println("\n--- Visualizza Vittorie ---");
         System.out.print("Inserisci il nome del giocatore: ");
         String nome = Leggi.unoString();
+        
         int vittorie = gestoreAccesso.getVittorie(nome);
         System.out.println("Il giocatore " + nome + " ha vinto " + vittorie + " partite.");
     }

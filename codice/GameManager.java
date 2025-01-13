@@ -88,9 +88,4 @@ public class GameManager {
 
         System.out.println("\nLa partita è terminata. Grazie per aver giocato!");
     }
-
-    public static void main(String[] args) {
-        GameManager gameManager = new GameManager();
-        gameManager.menuPrincipale();
-    }
 }

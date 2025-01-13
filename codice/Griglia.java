@@ -221,6 +221,7 @@ public class Griglia {
         }
         return true;
     }
+    
     //fine della zezione per il controllo delle coordinat per quanto riguarda il posizionamento 
     //funzione per controllare il corretto posizionamento della nave 
     private boolean checkCoordinateCorrette(int rigaInizio,int colonnaInizio,int rigaFine,int colonnaFine, int naveDaAssegnare){

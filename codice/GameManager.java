@@ -69,10 +69,26 @@ public class GameManager {
         System.out.println("Giocatore 2: " + giocatore2.getNome());
         System.out.println("Inizia la partita!\n");
 
+
+
+        giocatore1.grigliaGiocatore.printGriglia();
+
+
+
+        System.out.println("=== Turno di " + giocatore1.getNome() + " ===");
+        giocatore1.grigliaGiocatore.inserisciNavi();
+
+        System.out.println("=== Turno di " + giocatore2.getNome() + " ===");
+        giocatore2.grigliaGiocatore.inserisciNavi();
+
+
+
+
         while (!(giocatore1.haPerso() && giocatore2.haPerso())) {
             if (turno % 2 == 0) {
-                System.out.println("=== Turno di " + giocatore1.getNome() + " ===");
+                System.out.println("=== Turno di " + giocatore1.getNome() + " ===");                
                 giocatore1.azioniGiocatore();
+
             } else {
                 System.out.println("=== Turno di " + giocatore2.getNome() + " ===");
                 giocatore2.azioniGiocatore();
@@ -80,6 +96,8 @@ public class GameManager {
             turno++;
             System.out.println();
         }
+
+
 
         if (giocatore1.haPerso()) {
             System.out.println("\n==> Ha vinto il " + giocatore2.getNome() + "!");

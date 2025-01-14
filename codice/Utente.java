@@ -40,7 +40,7 @@ public class Utente {
 
     public void azioniGiocatore(){
         grigliaGiocatore.printGriglia();
-        grigliaGiocatore.inserisciNavi();
+        //grigliaGiocatore.inserisciNavi();
         attacco();
     }
 

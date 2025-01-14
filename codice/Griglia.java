@@ -242,7 +242,7 @@ public class Griglia {
         int colonnaFine = 0;
 
         do {
-            System.out.println("Inserisci la prima coordinata x e y per l'inizio della nave, dimensione: " + naveDaAssegnare);
+            System.out.println("\nInserisci la prima coordinata x e y per l'inizio della nave, dimensione: " + naveDaAssegnare);
             System.out.println("Ricorda, per il corretto assegnamento o la colonna o la riga devono essere uguali, perchè la nave non può essere assegnata in diagonale");
             System.out.print("Inserisci la coordinata della prima riga:");
             rigaInizio = Leggi.unInt();
@@ -256,7 +256,6 @@ public class Griglia {
             System.out.print("Inserisci la coordinata della seconda colonna:");
             colonnaFine = Leggi.unInt();
 
-            printGriglia();
         } while (!checkCoordinateCorrette(rigaInizio, colonnaInizio, rigaFine, colonnaFine, naveDaAssegnare));
     }
 

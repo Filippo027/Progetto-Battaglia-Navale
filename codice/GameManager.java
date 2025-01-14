@@ -75,10 +75,10 @@ public class GameManager {
 
 
 
-        System.out.println("=== Turno di " + giocatore1.getNome() + " ===");
+        System.out.println("\u001B[33m=== Turno di " + giocatore1.getNome() + " ===\u001B[0m");
         giocatore1.grigliaGiocatore.inserisciNavi();
 
-        System.out.println("=== Turno di " + giocatore2.getNome() + " ===");
+        System.out.println("\u001B[33m=== Turno di " + giocatore2.getNome() + " ===\u001B[0m");
         giocatore2.grigliaGiocatore.inserisciNavi();
 
 
@@ -86,11 +86,11 @@ public class GameManager {
 
         while (!(giocatore1.haPerso() && giocatore2.haPerso())) {
             if (turno % 2 == 0) {
-                System.out.println("=== Turno di " + giocatore1.getNome() + " ===");                
+                System.out.println("\u001B[33m=== Turno di " + giocatore1.getNome() + " ===\u001B[0m");                
                 giocatore1.azioniGiocatore();
 
             } else {
-                System.out.println("=== Turno di " + giocatore2.getNome() + " ===");
+                System.out.println("\u001B[33m=== Turno di " + giocatore2.getNome() + " ===\u001B[0m");
                 giocatore2.azioniGiocatore();
             }
             turno++;

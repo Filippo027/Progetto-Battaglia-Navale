@@ -45,7 +45,7 @@ public class Griglia {
         if ((rigaInizio > 0 && rigaInizio < 10) && (colonnaInizio > 0 && colonnaInizio < 7)) {
             return true;
         } else {
-            System.out.println("Hai inserito dei numeri che non stanno nel campo da gioco, reinserisci");
+            System.out.println("\u001B[31mHai inserito dei numeri che non stanno nel campo da gioco, reinserisci\u001B[0m");
             return false;
         }
     }
@@ -53,15 +53,15 @@ public class Griglia {
     // Metodo per impostare una cella come colpita
     public boolean setCellaColpita(int rigaInizio, int colonnaInizio) {
         if (!checkNumeriCorretti(rigaInizio, colonnaInizio)) {
-            System.out.println("Coordinate non valide, reinseriscile");
+            System.out.println("\u001B[31mCoordinate non valide, reinseriscile\u001B[0m");
             return false;
         }
 
         if (!griglia[rigaInizio][colonnaInizio].getColpito()) {
             griglia[rigaInizio][colonnaInizio].setColpito();
-            System.out.println("Hai colpito una parte della nave!");
+            System.out.println("\u001B[32mHai colpito una parte della nave!\u001B[0m");
         } else {
-            System.out.println("Cella già colpita precedentemente, reinserisci le coordinate");
+            System.out.println("\u001B[31mCella già colpita precedentemente, reinserisci le coordinate\u001B[0m");
             return false;
         }
 
@@ -105,12 +105,12 @@ public class Griglia {
     // Metodo per verificare la posizione delle navi
     private boolean checkPosizione(int rigaInizio, int colonnaInizio, int rigaFine, int colonnaFine, int naveDaAssegnare) {
         if ((rigaInizio != rigaFine) && (colonnaInizio != colonnaFine)) {
-            System.out.println("Le due coordinate non hanno ne la stessa riga, ne la stessa colonna, reinserisci");
+            System.out.println("\u001B[31mLe due coordinate non hanno né la stessa riga, né la stessa colonna, reinserisci\u001B[0m");
             return false;
         }
         if (naveDaAssegnare != 1) {
             if ((rigaInizio == rigaFine) && (colonnaInizio == colonnaFine)) {
-                System.out.println("Hai inserito due coordinate uguali, reinserisci");
+                System.out.println("\u001B[31mHai inserito due coordinate uguali, reinserisci\u001B[0m");
                 return false;
             }
         } else if (naveDaAssegnare == 1) {
@@ -153,7 +153,7 @@ public class Griglia {
         if (distanza == naveDaAssegnare) {
             return true;
         } else {
-            System.out.println("Le coordinate inserite non hanno la giusta distanza, quest'ultima dev'essere uguale a " + naveDaAssegnare);
+            System.out.println("\u001B[31mLe coordinate inserite non hanno la giusta distanza, quest'ultima dev'essere uguale a " + naveDaAssegnare + "\u001B[0m");
             return false;
         }
     }
@@ -165,7 +165,7 @@ public class Griglia {
                 if (colonnaInizio < colonnaFine) {
                     for (int j = colonnaInizio; j <= colonnaFine; j++) {
                         if (griglia[rigaInizio][j].getAssegnato()) {
-                            System.out.println("Una delle celle da assegnare alla nave è gia assegnata, reinserisci");
+                            System.out.println("\u001B[31mUna delle celle da assegnare alla nave è già assegnata, reinserisci\u001B[0m");
                             return false;
                         } else {
                             griglia[rigaInizio][j].setAssegnato();
@@ -174,7 +174,7 @@ public class Griglia {
                 } else {
                     for (int j = colonnaFine; j <= colonnaInizio; j++) {
                         if (griglia[rigaInizio][j].getAssegnato()) {
-                            System.out.println("Una delle celle da assegnare alla nave è gia assegnata, reinserisci");
+                            System.out.println("\u001B[31mUna delle celle da assegnare alla nave è già assegnata, reinserisci\u001B[0m");
                             return false;
                         } else {
                             griglia[rigaInizio][j].setAssegnato();
@@ -187,7 +187,7 @@ public class Griglia {
                 if (rigaInizio < rigaFine) {
                     for (int j = rigaInizio; j <= rigaFine; j++) {
                         if (griglia[rigaInizio][j].getAssegnato()) {
-                            System.out.println("Una delle celle da assegnare alla nave è gia assegnata");
+                            System.out.println("\u001B[31mUna delle celle da assegnare alla nave è già assegnata\u001B[0m");
                             return false;
                         } else {
                             griglia[colonnaInizio][j].setAssegnato();
@@ -196,7 +196,7 @@ public class Griglia {
                 } else {
                     for (int j = rigaFine; j <= rigaInizio; j++) {
                         if (griglia[colonnaInizio][j].getAssegnato()) {
-                            System.out.println("Una delle celle da assegnare alla nave è gia assegnata");
+                            System.out.println("\u001B[31mUna delle celle da assegnare alla nave è già assegnata\u001B[0m");
                             return false;
                         } else {
                             griglia[colonnaInizio][j].setAssegnato();

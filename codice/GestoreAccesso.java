@@ -27,7 +27,7 @@ public class GestoreAccesso {
             System.out.println("Accesso riuscito per il giocatore: " + nome);
             return true;
         } else {
-            System.out.println("Accesso negato. Nome utente o password errati.");
+            System.out.println("\u001B[31mAccesso negato. Nome utente o password errati.\u001B[0m");
             return false;
         }
     }
